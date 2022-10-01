@@ -1,0 +1,7 @@
+Package: image-configurator
+Version: 1.0.0
+Maintainer: D3VL LTD <jack@d3vl.com>
+Description: Change the splash screen and screensaver images with files on your micro sd.
+Architecture: pigeon-glasses
+Homepage: https://github.com/d3vl/wtfos-image-configurator
+Depends: dinit, image-changer, ffmpeg
