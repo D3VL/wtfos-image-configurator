@@ -27,7 +27,7 @@ if [[ SD_CARD ]]; then
         echo "[image-configurator] screensaver02.png found on SD card";
         
         ffmpeg -i "/mnt/media_rw/$SD_CARD/screensaver02.png" -vf "scale=1440:810" -pix_fmt bgra "/tmp/screensaver02.rgb" &&
-        mv /tmp/screensaver02.rgb /data/screensaver01.data
+        mv /tmp/screensaver02.rgb /data/screensaver02.data
 
         echo "[image-configurator] screensaver02.png converted to screensaver02.data";
 
