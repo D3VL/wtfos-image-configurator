@@ -19,7 +19,7 @@ if [[ SD_CARD ]]; then
             draw_to_screensaver 1 /data/screensaver01.data
         fi
 
-        rm "/mnt/media_rw/$SD_CARD/screensaver01.png"
+        mv "/mnt/media_rw/$SD_CARD/screensaver01.png" "/mnt/media_rw/$SD_CARD/screensaver01.png.ok"
 
     fi
 
@@ -35,7 +35,7 @@ if [[ SD_CARD ]]; then
             draw_to_screensaver 2 /data/screensaver02.data
         fi
 
-        rm "/mnt/media_rw/$SD_CARD/screensaver02.png"
+        mv "/mnt/media_rw/$SD_CARD/screensaver02.png" "/mnt/media_rw/$SD_CARD/screensaver02.png.ok"
 
     fi
 
@@ -51,8 +51,29 @@ if [[ SD_CARD ]]; then
             draw_to_splash /data/splashscreen.yuv
         fi
 
-        rm "/mnt/media_rw/$SD_CARD/splashscreen.png"
+        mv "/mnt/media_rw/$SD_CARD/splashscreen.png" "/mnt/media_rw/$SD_CARD/splashscreen.png.ok"
 
+    fi
+
+    if [[ -f "/mnt/media_rw/$SD_CARD/splashscreen.delete" ]]; then
+        echo "[image-configurator] splashscreen.delete found on SD card";
+
+        rm /data/splashscreen.yuv
+        mv "/mnt/media_rw/$SD_CARD/splashscreen.delete" "/mnt/media_rw/$SD_CARD/splashscreen.delete.ok"
+    fi
+
+    if [[ -f "/mnt/media_rw/$SD_CARD/screensaver01.delete" ]]; then
+        echo "[image-configurator] screensaver01.delete found on SD card";
+
+        rm /data/screensaver01.data
+        mv "/mnt/media_rw/$SD_CARD/screensaver01.delete" "/mnt/media_rw/$SD_CARD/screensaver01.delete.ok"
+    fi
+
+    if [[ -f "/mnt/media_rw/$SD_CARD/screensaver02.delete" ]]; then
+        echo "[image-configurator] screensaver02.delete found on SD card";
+
+        rm /data/screensaver02.data
+        mv "/mnt/media_rw/$SD_CARD/screensaver02.delete" "/mnt/media_rw/$SD_CARD/screensaver02.delete.ok"
     fi
 
     echo "[image-configurator] SD scan functions complete";

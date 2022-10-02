@@ -1,3 +1,9 @@
 #!/system/bin/sh
 
+# Remove any custom images
+rm -f /data/screensaver01.data
+rm -f /data/screensaver02.data
+rm -f /data/splashscreen.yuv
+
+# disable image-configurator
 /opt/sbin/dinitctl disable image-configurator || true
