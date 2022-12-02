@@ -1,5 +1,5 @@
 Package: image-configurator
-Version: 1.0.2
+Version: 1.0.3
 Maintainer: D3VL LTD <jack@d3vl.com>
 Description: Change the splash screen and screensaver images with splashscreen.png, screensaver01.png and screensaver02.png in the root of the SD card.
 Architecture: pigeon-glasses
